@@ -14,6 +14,10 @@ app.use(express.urlencoded({extended: true,limit:"16kb"})) //nested object can b
 app.use(express.static("public")) //to serve static files
 app.use(cookieParser()) //middleware to parse cookies
 
+//routes import
+import userRouter from './routes/user.routes.js'
 
+//routes declaration
+app.use("/api/v1/users", userRouter)
 
-export { app }
+export default app
